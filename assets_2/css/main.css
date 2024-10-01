@@ -140,7 +140,7 @@
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3895,3 +3895,49 @@
 			}
 
 	}
+
+
+	/* <!-- this is added so that images can be adjusted to smaller screens --> */
+	.responsive-image {
+		width: 65% !important; /* Forcing width to 80% */
+		margin: 0 auto; /* Centers the image */
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.responsive-image {
+			width: 90% !important; /* Force width to 100% for smaller screens */
+		}
+	}
+
+
+
+	/* <!-- <style> */
+	.logo-container {
+		display: inline-block; /* Align logos horizontally */
+		margin-right: 10px; /* Space between logos */
+		position: relative; /* Position for overlay */
+		width: 50px; /* Set fixed width */
+		height: 50px; /* Set fixed height */
+		border-radius: 50%; /* Make it circular */
+		border: 0.3px solid whitesmoke; /* Border color */
+		overflow: hidden; /* Hide overflow for the circular shape */
+	}
+
+	.logo-container img {
+		width: 100%; /* Fill container */
+		height: 100%; /* Fill container */
+		object-fit: cover; /* Cover the container */
+	}
+
+	.overlay {
+		position: absolute; /* Position overlay on top */
+		top: 0; /* Align to top */
+		left: 0; /* Align to left */
+		width: 100%; /* Cover the entire logo */
+		height: 100%; /* Cover the entire logo */
+		background-color: rgba(150, 148, 148, 0.5); /* Gray tint */
+		pointer-events: none; /* Allow clicks through the overlay */
+		opacity: 0.5
+	}
+	/* </style> --> */
