@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Salaries Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets_2/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 style="margin-left: 25px;"> Project by Iellmar Barroga</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html" style="margin-right: 20px;">Home</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Navigating High-Paying Careers: An Analysis of Salary Trends</h2>
+						<p>Analyzing 2023-2024 LinkedIn Job Postings to Uncover Salary Patterns by Role and Industry</p>
+					</header>
+					<div class="box">
+						<!-- <span class="image featured"><img src="../images/pic01.jpg" alt="" /></span> -->
+						<h3>Introduction</h3>
+						<p>With a rapidly evolving job market, understanding salary trends across various roles and industries is essential for both job seekers and employers. This analysis focuses on salary data from LinkedIn job postings in 2023-2024, aiming to uncover patterns and trends specific to roles and industries. By exploring questions such as which roles command the highest salaries and how industries compare in compensation, this project provides valuable insights to navigate the job market more effectively using <strong>Excel</strong>, <strong>Power Query</strong> and <strong>Power Pivot</strong>.</p>
+			
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Data Overview</h3>
+								<p>The data for this analysis was sourced from <a href="https://www.kaggle.com/datasets/arshkon/linkedin-job-postings/data" target="_blank">Kaggle</a>. The dataset for this analysis wass structured into three key components:</p>
+								<ul style="margin-left: 2%; margin-bottom: 2%">
+									<li>Mappings folder: Contains dimension tables for industries and skills.</li>
+									<li>Jobs folder: Includes industry data linked with job IDs.</li>
+									<li>Postings: The main dataset containing job listings from LinkedIn, associated with job IDs to link industry and skill data.</li>
+								</ul>
+								<p>The dataset covers various industries, roles, and skills, providing a comprehensive view of the job market's salary structure.</p>
+
+								<h3 style="margin-top: 2%;">Methodology</h3>
+								
+								<h4>Data Preprocessing Steps in Power Query</h4>
+								<ol style="margin-left: 2%; margin-bottom: 2%">
+									<li>Data Cleaning: Irrelevant fields, such as job descriptions and URLs, were removed to focus on salary-related attributes.</li>
+									<li>Filtering Records: Null values in critical fields like salary data were filtered out to maintain the dataset's integrity.</li>
+									<li>Data Transformation: Calculated columns were created to compute annual median salaries, offering a standardized view of compensation.</li>
+									<li>Merging: Industry and skills data were merged with the job postings dataset based on job IDs, creating a unified dataset for analysis.</li>
+								</ol>
+
+								<h4>Power Pivot Analysis</h4>
+								<ol style="margin-left: 2%; margin-bottom: 2%">
+									<li>Median Salary Calculation: Using Power Pivot, the median salary was computed across roles and industries to ensure more robust insights, minimizing the impact of outliers.</li>
+									<li>Pivot Tables: Data was summarized using pivot tables, enabling easy comparison across different industries and roles.</li>
+								</ol>
+
+								<h3 style="margin-top: 3%;">Findings</h3>
+								<h4 style="margin-top: 1%">High-Paying Roles </h4>
+								<p style="margin-top: 2%"> The analysis identifies several high-paying roles across various industries, with particular emphasis on positions that require strategic oversight and specialized skills. Notable roles include <strong>product management</strong>, <strong>legal positions</strong>, <strong>strategy and planning, consulting</strong>, and <strong>engineering</strong>. These roles reflect a strong demand for expertise that drives business success in competitive markets.</p>
+								<!-- <p><strong>High-Paying Roles Across Industries:</strong> Roles in technology (e.g., Software Engineering, Data Science) tend to offer the highest salaries across almost all industries. Additionally, C-level and executive roles consistently show top-tier compensation. </p>-->
+								
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-5/salary role.png" alt="" />
+								</p>
+								
+								<h4 style="margin-top: 2%">High-Paying Industries</h4>
+								<p style="margin-top: 2%">In terms of industries, <strong>real estate</strong> stands out as the highest paying, followed by sectors such as <strong>entertainment</strong>, <strong>e-learning</strong>, <strong>executive search services</strong>, and <strong>investment consultancy</strong>. These industries are characterized by high revenue potential and specialized knowledge, making them attractive for professionals seeking lucrative career opportunities.</p>
+								<p>These figures illustrate that specific industries provide lucrative opportunities for professionals. The real estate sector leads significantly, reflecting the industry's high commission structure, while creative and advisory sectors also offer substantial compensation packages.</p>
+
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-5/salary industry.png" alt="" />
+								</p>
+								
+								<h3 style="margin-top: 3%;">Conclusion</h3>
+								<p>In summary, this analysis of salary trends across various roles and industries underscores the significant earning potential for professionals in today’s job market. High-paying roles such as product management, legal expertise, and strategic planning highlight the importance of specialized skills and strategic oversight in driving business success. Similarly, industries like real estate, entertainment, and e-learning demonstrate the lucrative opportunities available in sectors characterized by high revenue and specialized knowledge.</p>
+								<p>These insights can guide job seekers in targeting careers with strong earning potential while providing employers with valuable information to attract and retain top talent. As the job market continues to evolve, staying informed about these trends will be crucial for both professionals and organizations striving for success.</p>
+
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://github.com/iellmarbarroga" target= "_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/iellmar-barroga/" target= "_blank" class="icon brands fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li> <a class="icon solid fa-envelope"><span class="label">Email</span> barroga.iig@gmail.com</a></li> 
+						<li><a href="https://drive.google.com/file/d/1G9DAxeX3J58gO1f-ZOWDN2AepSEPlGtr/view?usp=drive_link" target= "_blank">CV</a></li> 
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts
+			<script src="assets_2/js/jquery.min.js"></script>
+			<script src="assets_2/js/jquery.dropotron.min.js"></script>
+			<script src="assets_2/js/jquery.scrollex.min.js"></script>
+			<script src="assets_2/js/browser.min.js"></script>
+			<script src="assets_2/js/breakpoints.min.js"></script>
+			<script src="assets_2/js/util.js"></script>
+			<script src="assets_2/js/main.js"></script> -->
+
+	</body>
+</html>

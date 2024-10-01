@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Example</title>
+    <link rel="stylesheet" href="../assets_2/css/main.css" />
+
+
+    <!-- CSS inside the <style> tag -->
+    <style>
+        .responsive-image {
+            width: 10%; /*Default width on larger screens*/
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        /* Media query for smaller screens (mobile) */
+        @media (max-width: 768px) {
+            .responsive-image {
+                width: 100%; /* Set width to 100% on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Image with responsive width -->
+    <p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+        <img src="project images/p-i-1/season.png" alt="Season Image" class="responsive-image" >
+    </p>
+</body>
+</html>
