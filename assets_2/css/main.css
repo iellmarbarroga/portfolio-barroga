@@ -1966,7 +1966,7 @@
 
 	.container {
 		margin: 0 auto;
-		max-width: calc(100% - 5em);
+		max-width: calc(100% - 30em);
 		width: 60em;
 	}
 
