@@ -1968,7 +1968,6 @@
 		margin: 0 auto;
 		max-width: calc(100% - 30em);
 		width: 60em;
-		min-width: 400px;
 	}
 
 		.container.xsmall {
