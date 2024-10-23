@@ -29,7 +29,7 @@
 					<div class="box">
 						<!-- <span class="image featured"><img src="../images/pic01.jpg" alt="" /></span> -->
 						<h3>Introduction</h3>
-						<p>Understanding housing trends is essential for buyers and investors. This article presents an analysis of the housing market in Metro Manila, utilizing a dataset sourced from the Lamudi platform. By employing <strong>Power BI</strong> for visualization and <strong>Python</strong> for data cleaning, I take the challenge of revealing key insights into property listings and market trends.</p>
+						<p>Understanding housing trends is essential for buyers and investors. This article presents an analysis of the housing market in Metro Manila, utilizing a dataset sourced from the Lamudi platform. By employing <strong>Power BI</strong> for visualization and <strong>Python</strong> for data cleaning, I took on the challenge of revealing key insights into property listings and market trends.</p>
 			
 						<div class="row">
 							<div class="row-6 row-12-mobilep">
@@ -43,13 +43,56 @@
 									<li>Floor Area: Area in square meters.</li>
 									<li>Land Area: Land area in square meters.</li>
 								</ul>
-								<p>Data cleaning was conducted using <strong>Power Query</strong> and <strong>Python</strong>, encompassing several key steps. First, city names were extracted from the Location column to enable city/municipality identification. Next, a mapping was created to filter the dataset for listings specifically within Metro Manila. Additionally, properties were categorized into housing types and storey levels by identifying relevant keywords in the Description column. Finally, to address the 3% of missing values in the Price column, median prices by city were calculated and imputed using Python, ensuring a more robust dataset for analysis.</p>
+
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 2%; margin-bottom: 2%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-2/raw_data.png" alt="" />
+								</p>
+
+								<h3 style="margin-top: 3%;">Data preprocessing</h3>
+
+								<p>To acquire the cities and/or municipalities in the dataset, the last characters after the delimiter comma in the 'Location' column were extracted. </p>
+
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-2/a_delimiter.png" alt="" class="responsive-image" >
+								</p>
+								
+								<p>I prepared a mapping of cities and/or municipalities in Metro Manila using this <a href="https://en.wikipedia.org/wiki/List_of_cities_and_municipalities_in_the_Philippines" target="_blank">data</a> to subset the listings on the locations we are interested in.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-2/ncr cities.png" alt="" class="responsive-image" >
+								</p>
+								
+								<p>To filter the dataset to include only Metro Manila locations, a left join was used where the 'NCR cities mapping' is the left table, subsetting the 'listings' (right table).</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-2/merge.png" alt="" class="responsive-image" >
+								</p>
+
+								<p>To extract the type of housing (Single Attached/Detached, Townhouse, Multiplex, others), Text.contains function was used to check if the Description column contained specific keywords that defined it to a housing type.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 3%; margin-bottom: 2%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-2/type_house.png" alt="" />
+								</p>
+								
+								<p>To extract the number of floors (1-storey, 2-storey, etc.), Text.contains function was used to check if the Description column contained specific keywords that defined it to a storey-level.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-2/storey_level.png" alt="" class="responsive-image" >
+								</p>
+
+								<p>Upon checking, there are 3 percent of missing data in the Price column. So median imputation was considered; median house price grouped by city was filled to the missing data. Python was used for this technique. The Price column was grouped by City, and then its median was calculated. A new column called 'price_medians_city' was created to contain the medians. The medians were then used to fill null values. Below is the Python script that I used.</p>
 
 								<!-- This line is use to insert image -->
 								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
 									<img src="project images/p-i-2/python_script_median_imputation.png" alt="" class="responsive-image" >
 								</p>
-								
+
 								<h3>KPIs</h3>
 								<p>To provide a concise overview, I included four critical KPIs in the dashboard:</p>
 								<ol style="margin-left: 2%; margin-bottom: 2%">
@@ -68,41 +111,42 @@
 									class="image featured" ><img src="project images/p-i-2/mm housing db.png" alt="" />
 								</p>
 
-								<h3 style="margin-top: 2%;">Insights</h3>
-
+								<h3 style="margin-top: 2%;">Analysis and Findings</h3>
+								<h4 style="margin-top: 3%;">Median Prices</h4>
+								<p style="margin-top: 2%">Based on property listings from Lamudi, the median house price in Metro Manila was <strong>Php 28.65 million</strong>, with a median price of <strong>Php 212,580</strong> per square meter. Makati City, known for its central business district and luxurious villages, stood out with a staggering median price of Php 152 million and an average of Php 643,600 per square meter. Taguig, home to the upscale Bonifacio Global City, followed closely with a median price of Php 112 million and Php 280,500 per square meter. Other cities, such as Marikina (Php 9.7M), Valenzuela (Php 7.4M), and Caloocan (Php 4.5M), offered the most inexpensive options.  </p>
+								
 								<div class="row">
-									<article class="col-4 col-10-narrower" style="margin: 0 auto">
+									<article class="col-6 col-10-narrower" style="margin: 0 auto">
 										<!-- This line is use to insert image -->
 										<a style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%;" 
 											class="image featured" ><img src="project images/p-i-2/mm1.png" alt=""/>
 										</a>
-										
 									</article>
-
-									<article class="col-4 col-10-narrower" style="margin: 0 auto">
+									<article class="col-6 col-10-narrower" style="margin: 0 auto">
 										<!-- This line is use to insert image -->
 										<a style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%;" 
 											class="image featured" ><img src="project images/p-i-2/mm2.png" alt="" />
 										</a>
-										
 									</article>
+								</div>
 
-									<article class="col-4 col-10-narrower" style="margin: 0 auto">
+								<h4 style="margin-top: 3%">Total Listings</h4>
+								<p style="margin-top: 2%">When it comes to the number of listings on the website, Muntinlupa had the highest at 140, followed by Quezon City (117 listings) and Parañaque (68 listings).  These areas generally offered larger land areas and more residential developments compared to central business districts like Makati or Taguig, where space is more limited, and prices are higher. </p>			
+														
+								<div class="row">
+								
+									<article class="col-6 col-10-narrower" style="margin: 0 auto">
 										<!-- This line is use to insert image -->
 										<a style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%;" 
 											class="image featured" ><img src="project images/p-i-2/mm3.png" alt="" />
 										</a>
-										
 									</article>
-
 								</div>
 
-								<h4 style="margin-top: 3%;">Median Prices</h4>
-								<p style="margin-top: 2%">Based on property listings from Lamudi, the median house price in Metro Manila was <strong>Php 28.65 million</strong>, with a median price of <strong>Php 212,580</strong> per square meter. Makati City, known for its central business district, stood out with a staggering median price of Php 152 million and an average of Php 643,600 per square meter. Taguig, home to the upscale Bonifacio Global City, followed closely with a median price of Php 112 million and Php 280,500 per square meter. Other cities, such as Marikina (Php 9.7M), Valenzuela (Php 7.4M), and Caloocan (Php 4.5M), offered the most inexpensive options.  </p>
-						
-								<h4 style="margin-top: 1%">Total Listing</h4>
-								<p style="margin-top: 2%">When it comes to the number of listings on the website, Muntinlupa had the highest at 140, followed by Quezon City (117 listings) and Parañaque (68 listings).  These areas generally offered larger land areas and more residential developments compared to central business districts like Makati or Taguig, where space is more limited, and prices are higher. </p>			
-														
+								<h3 style="margin-top: 2%;">Insights</h3>
+								<p>The property market in Metro Manila displays significant variation in prices across different cities. Makati and Taguig, known for their luxurious villages and central business districts, stand out as the most expensive areas, reflecting their premium location. On the other hand, cities like Marikina, Valenzuela, and Caloocan offer more affordable housing options, making them attractive for buyers looking for inexpensive options.</p>
+								<p>In terms of listings, Muntinlupa, Quezon City, and Parañaque have the highest number of available properties, largely due to their larger land areas and residential developments. These cities provide more spacious and suburban living environments compared to the more densely populated business districts, where space is limited and prices are higher. This contrast highlights the diverse options available in Metro Manila's property market, catering to both upper and middle income groups.</p>
+
 								<h3 style="margin-top: 3%;">Video Demo</h3>
 								<iframe style="display: block" width=100% height=520 src="https://www.youtube.com/embed/Ie8J9IOW9gM?si=s6xMfqTp7S6mhm1h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

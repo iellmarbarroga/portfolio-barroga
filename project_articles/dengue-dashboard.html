@@ -32,7 +32,7 @@
 						<!-- <span class="image featured"><img src="../images/pic01.jpg" alt="" /></span> -->
 						<h3>Introduction</h3>
 						<p>One of the most pressing public health concerns in tropical countries like the Philippines is <strong>dengue fever</strong>, a mosquito-borne disease that affects thousands of individuals annually. For this project, I took on the challenge of exploring the dataset on Dengue Cases in the Philippines and created a <strong>Power BI dashboard</strong> to visualize trends, patterns, and regional impacts of the disease. 
-							As part of my data analyst portfolio, I analyzed five years' worth of dengue case data in the Philippines using <strong>Power BI</strong> to uncover trends and insights. This dashboard visualizes key metrics, regional patterns, and seasonal impacts.</p>
+							I analyzed five years' worth of dengue case data in the Philippines using <strong>Power BI</strong> to uncover trends and insights. This dashboard visualizes key metrics, regional patterns, and seasonal impacts.</p>
 			
 						<div class="row">
 							<div class="row-6 row-12-mobilep">
@@ -45,7 +45,33 @@
 									<li><span class="label">Dengue_Cases:</span> <span class="value">(monthly case count)</span></li>
 									<li><span class="label">Dengue_Deaths:</span> <span class="value">(monthly death count)</span></li>
 								</ul>
-								<p style="margin-top: -2%;">In preprocessing, I standardized region names, mapped regions to island groups (Luzon, Visayas, Mindanao) and its corresponding <a href= https://en.wikipedia.org/wiki/Regions_of_the_Philippines target= "_blank">populations</a>, and categorized months into <strong>rainy</strong> (June-November) and <strong>dry seasons</strong> (December-May). </p>
+
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: -3%; margin-bottom: 2%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-1/raw_data.png" alt="" />
+								</p>
+
+								<h3 style="margin-top: 3%;">Data preprocessing</h3>
+								<p style="margin-top: 1%;">In preprocessing, I standardized region names, mapped regions to island groups (Luzon, Visayas, Mindanao) and its corresponding <a href= https://en.wikipedia.org/wiki/Regions_of_the_Philippines target= "_blank">populations</a> into 'info_region_clean' Table. The supplementary information here would be useful for aggregating regional values.</p> 
+								
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 0%; margin-bottom: 2%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-1/info_reg.png" alt="" />
+								</p>
+
+								<p >Additionally, to categorize months into <strong>rainy</strong> (June-November) and <strong>dry seasons</strong> (December-May), I converted the 'Month' column into its month-number, then used a conditional column for distinguishing rainy and dry months.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-1/rainy_dry.png" alt="" class="responsive-image" >
+								</p>
+
+								<p style="margin-top: 1%;">Lastly, it is equally important as well to connect the tables by their keys in the 'Model' view so that there is a relationship when an ongoing calculations are being performed.</p> 
+
+								<!-- This line is use to insert image -->
+								<p style="display: block; margin-top: 0%; margin-bottom: 4%; margin-left: 0%; width: 100%" 
+									class="image featured" ><img src="project images/p-i-1/erd.png" alt="" />
+								</p>
 
 								<h3>KPIs</h3>
 								<p>To provide a concise overview, I included four critical KPIs in the dashboard:</p>
@@ -65,30 +91,37 @@
 									class="image featured" ><img src="project images/p-i-1/dengue db details 1.png" alt="" />
 								</p>
 
-								<h3 style="margin-top: 2%">Insights</h3>
+								<h3 style="margin-top: 2%">Analysis and Findings</h3>
 								<h4 style="margin-top: 2%;">Regional Trends</h4>
 								<p style="margin-top: 2%"><strong>Luzon</strong> had the highest number of <strong>dengue cases</strong> (597k) due to its overall population, greater than the cases from <strong>Visayas</strong> and <strong>Mindanao</strong> combined (280k and 269k respectively). Regions in Luzon, particularly <strong>Region IV-A (CALABARZON)</strong>, <strong>Region III (Central Luzon)</strong> and <strong>Metro Manila</strong> had the highest number of cases. </p>
-								<p>For <strong>total deaths</strong>, <strong>Luzon</strong> (6.8k) still had the highest number of deaths, followed relatively closely by <strong>Mindanao</strong> (5.9k). <strong>Visayas</strong> had the lowest recorded deaths (4.3k). </p>
 								
-								<div class="row">
-									<article class="col-6 col-12-narrower">
-										<!-- This line is use to insert image -->
-										<a style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%;" 
-											class="image featured" ><img src="project images/p-i-1/tc dengue.png" alt=""/>
-										</a>
-									</article>
-									<article class="col-6 col-12-narrower">
-										<!-- This line is use to insert image -->
-										<a style="display: block; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; width: 100%;" 
-											class="image featured" ><img src="project images/p-i-1/td dengue.png" alt="" />
-										</a>
-									</article>
-								</div>
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-1/tc dengue.png" alt="" class="responsive-image" >
+								</p>
+								
+								<p>For <strong>total deaths</strong>, <strong>Luzon</strong> (6.8k) still had the highest number of deaths, followed relatively closely by <strong>Mindanao</strong> (5.9k). <strong>Visayas</strong> had the lowest recorded deaths (4.2k). <strong>NCR</strong> accounted for the most deaths (4k), still greater than the second and third most combined.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-1/td dengue.png" alt="" class="responsive-image" >
+								</p>
 
 								<p style="margin-top: 2%">The average <strong>fatality</strong> and <strong>prevalence rate</strong> are 1.47% and 1.11% respectively. <strong>Luzon</strong> had 1.14% and 0.96% fatality and prevalence rate, the lowest among the three group islands. <strong>Mindanao</strong> had the highest fatality rate of 2.18% followed by <strong>Visayas</strong> with 1.48%. On the other hand, <strong>Visayas</strong> has the highest prevalence rate of 1.77% followed by <strong>Mindanao</strong> with 1.07%.</p>
-								<p>However, <strong>Metro Manila</strong> had the highest fatality rate (3.46%) way greater than double the national average (1.47%).</p>
 								
-								<h4 style="margin-top: 1%">Seasonal Impact</h4>
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-1/island_info.png" alt="" class="responsive-image" >
+								</p>
+								
+								<p><strong>Region XII (Soccsksargen)</strong> had the highest fatality rate of 4.68% despite its relatively lower population density of 202 per square kilometer. <strong>Metro Manila</strong>, with a whopping 20,247 population density, had a fatality rate of 3.46%, the second highest. On the other hand, <strong>Metro Manila</strong> had a relatively lower prevalence rate of 0.86% despite its high population density. <strong>Region VI (Western Visayas)</strong> had the highest prevalence rate of 2.48%.</p>
+								
+								<!-- This line is use to insert image -->
+								<p style="margin-top: 0%; margin-bottom: 2%;" class="image featured">
+									<img src="project images/p-i-1/ncr_info.png" alt="" class="responsive-image" >
+								</p>
+
+								<h4 style="margin-top: 3%">Seasonal Impact</h4>
 								<p style="margin-top: 2%">As expected, dengue cases surged during the <strong>rainy season</strong> (June-November), peaking around August and September. <strong>Dry season</strong> months saw fewer cases, but spikes were observed occasionally. </p>
 								
 								<!-- This line is use to insert image -->
@@ -96,9 +129,14 @@
 									<img src="project images/p-i-1/season.png" alt="" class="responsive-image" >
 								</p>
 
-								<h4 style="margin-top: 2%">Population and Prevalence</h4>
-								<p style="margin-top: 2%">Surprisingly, Metro Manila with highest population density had recorded lower <strong>prevalence rate</strong> (0.11%) as compared to the national average (1.11%). The prevalence rate is consistent with the regions with the highest populations (Region IV-A: 0.16%, Region III: 0.13%, Region VII: 0.11%) </p>
-								
+								<h3 style="margin-top: 2%">Insights</h3>
+								<p>The data on dengue cases highlights significant regional and seasonal trends that can inform better public health strategies. Luzon emerges as the most affected region, likely due to its high population, while Mindanao and Visayas show concerningly higher fatality rates despite fewer cases.</p> 
+								<p>This suggests that the latter regions faces greater challenges in healthcare access or lack thereof, leading to more severe outcomes. 
+									Notably, Metro Manila -  a region with high population density, also exhibit high fatality rates, indicating that densely populated areas face unique challenges in managing outbreaks effectively.</p>
+								<p>Seasonal trends show a clear spike in dengue cases during the rainy season, particularly from June to November, peaking in August and September, suggesting that preventive measures should be intensified during these months. </p>
+								<p>The data underscores the importance of targeted interventions, particularly in high-risk regions and during high-risk seasons, to reduce both infection rates and fatalities. 
+									Additionally, the variations in fatality and prevalence rates across regions suggest that public health responses should be tailored to specific regional needs, focusing on improving healthcare access and preparedness in areas where outcomes tend to be more severe.</p>
+
 								<h3 style="margin-top: 3%;">Video Demo</h3>
 								<iframe style="display: block" width=100% height=520 src="https://www.youtube.com/embed/vbJUY1O8byo?si=Xf1y7aFocYRXLLIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
